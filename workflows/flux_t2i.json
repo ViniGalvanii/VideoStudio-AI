@@ -1,0 +1,15 @@
+{
+  "1": {"class_type": "CheckpointLoaderSimple", "_meta": {"title": "Flux schnell fp8"},
+        "inputs": {"ckpt_name": "flux1-schnell-fp8.safetensors"}},
+  "2": {"class_type": "CLIPTextEncode", "_meta": {"title": "PROMPT"},
+        "inputs": {"clip": ["1", 1], "text": "PROMPT"}},
+  "3": {"class_type": "CLIPTextEncode", "_meta": {"title": "Negative (ignorado em cfg 1)"},
+        "inputs": {"clip": ["1", 1], "text": ""}},
+  "4": {"class_type": "EmptySD3LatentImage", "_meta": {"title": "Latent 9:16"},
+        "inputs": {"width": 720, "height": 1280, "batch_size": 1}},
+  "5": {"class_type": "KSampler", "_meta": {"title": "KSampler 4 steps"},
+        "inputs": {"model": ["1", 0], "positive": ["2", 0], "negative": ["3", 0], "latent_image": ["4", 0],
+                   "seed": 1, "steps": 4, "cfg": 1.0, "sampler_name": "euler", "scheduler": "simple", "denoise": 1.0}},
+  "6": {"class_type": "VAEDecode", "inputs": {"samples": ["5", 0], "vae": ["1", 2]}},
+  "7": {"class_type": "SaveImage", "inputs": {"images": ["6", 0], "filename_prefix": "kf/scene"}}
+}

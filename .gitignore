@@ -1,0 +1,12 @@
+projetos/*
+!projetos/.gitkeep
+vozes/
+assets/
+props3d/
+*.mp4
+*.wav
+*.mp3
+*.glb
+.env
+.venv/
+__pycache__/

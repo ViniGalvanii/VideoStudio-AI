@@ -1,0 +1,9 @@
+requests
+edge-tts
+faster-whisper
+numpy
+pillow
+trimesh        # só para props3d / align3d / preview3d
+matplotlib     # só para preview3d
+# Voz clonada (Chatterbox): instale em um venv separado -> pip install chatterbox-tts
+# e aponte TTS_PYTHON para o python desse venv. Requer ffmpeg no PATH.

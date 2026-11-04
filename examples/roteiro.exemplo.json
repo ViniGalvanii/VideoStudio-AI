@@ -1,0 +1,9 @@
+{
+  "titulo": "Exemplo",
+  "voz": "pt-BR-AntonioNeural",
+  "estilo_imagem": "documentary photograph, shot on 35mm film, natural light, muted colors, candid, no text",
+  "cenas": [
+    {"texto": "Primeira frase da narração.", "imagem": "prompt do keyframe 1", "movimento": "slow push-in", "animar": true, "seed": 1},
+    {"texto": "Segunda frase da narração.", "imagem": "prompt do keyframe 2", "movimento": "slow pan left", "animar": false, "seed": 2}
+  ]
+}
